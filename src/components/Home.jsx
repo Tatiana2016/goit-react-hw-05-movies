@@ -13,10 +13,10 @@ const Home = () => {
   return (
     <div>
       <h2>Trending Movies</h2>
-      {movies.map(movie => (
+      {movies && movies.map(movie => (
         <div key={movie.id}>
           <h3>{movie.title}</h3>
-          <p>{movie.overview}</p>
+          <p>{movie.original_title}</p>
         </div>
       ))}
     </div>

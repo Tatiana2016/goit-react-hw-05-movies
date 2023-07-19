@@ -15,8 +15,7 @@ const Movies = () => {
   return (
     <div>
       <input type="text" value={keyword} onChange={e => setKeyword(e.target.value)} />
-      <button onClick={handleSearch}>Search</button>
-      <h2>Search Results</h2>
+      <button onClick={handleSearch}>Search</button>      
       {movies.map(movie => (
         <Link to={`/movies/${movie.id}`} key={movie.id}>
           <div>

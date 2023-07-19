@@ -1,27 +1,24 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 
+import Header from './header/Header';
 import Home from './Home';
 import Movies from './Movies';
 import MovieDetails from './MovieDetails';
 import Cast from './Cast';
 import Reviews from './Reviews';
-import Header from './header/Header'
 
 const App = () => {
   return (
-    <div className='app-container'>
-      <Suspense fallback={<div>Loading...</div>}>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/movies" element={<Movies />} />
-          <Route path="/movies/:movieId" element={<MovieDetails />} /> {/* Додайте цей рядок */}
-          <Route path="/movies/:movieId/cast" element={<Cast />} />
-          <Route path="/movies/:movieId/reviews" element={<Reviews />} />
-          <Route path="*" element={<Home />} />
-        </Routes>
-      </Suspense>
+    <div>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/movies" element={<Movies />} />
+        <Route path="/movies/:movieId" element={<MovieDetails />} />
+        <Route path="/movies/:movieId/cast" element={<Cast />} />
+        <Route path="/movies/:movieId/reviews" element={<Reviews />} />
+      </Routes>
     </div>
   );
 };

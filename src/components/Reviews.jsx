@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams, useLocation } from 'react-router-dom';
 import { fetchMovieReviews } from './api';
 
 const Reviews = () => {
   const { movieId } = useParams();
+  const location = useLocation();
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
@@ -21,6 +22,10 @@ const Reviews = () => {
           <p>{review.content}</p>
         </div>
       ))}
+
+      <Link to={`/movies/${movieId}`} state={{ from: location }}>
+        Go back to Movie Details
+      </Link>
     </div>
   );
 };

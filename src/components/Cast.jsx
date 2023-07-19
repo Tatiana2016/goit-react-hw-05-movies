@@ -18,6 +18,7 @@ const Cast = () => {
       {cast.map(actor => (
         <div key={actor.id}>
           <h3>{actor.name}</h3>
+          <img src={`https://image.tmdb.org/t/p/w500${actor.profile_path}`} alt={actor.name} />
           <p>Character: {actor.character}</p>
         </div>
       ))}
